@@ -28,9 +28,12 @@
   --fs-heading-5: var(--fs-500);
   --fs-subheading-1: var(--fs-500);
   --fs-subheading-2: var(--fs-300);
+  --fs-nav-menu: var(--fs-500);
 
   --anim-duration: 300ms;
   --anim-mode: ease-in-out;
+
+  --bg-blur: 10px;
 }
 
 @media (min-width: 768px) {
@@ -154,6 +157,9 @@ svg {
 .fs-subheading-2 {
   font-size: var(--fs-subheading-2);
 }
+.fs-nav-menu {
+  font-size: var(--fs-nav-menu);
+}
 
 .fs-300 {
   font-size: var(--fs-300);
@@ -184,18 +190,23 @@ svg {
   justify-self: end;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 /*------------------------------------------------*/
 
 
 html {
   background-color: var(--clr-neutral-100);
-  font-size: var(--fs-400);
+  font-size: 1rem;
   color: var(--clr-primary-400);
   font-family: var(--ff-primary);
   font-weight: var(--fw-regular);
 }
 
 body {
+  font-size: var(--fs-400);
   padding: 1.5rem;
 }
 
@@ -230,9 +241,7 @@ body.home {
   row-gap: 2rem;
 }
 
-.main-nav, 
-.nav-divider,
-.nav-container {
+.nav-divider {
   display: none;
 }
 
@@ -269,6 +278,43 @@ main.home {
   width: 150px;
 }
 
+.nav-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  padding: 2em;
+  padding-top: 7em;
+  backdrop-filter: blur(calc(var(--bg-blur) *2));
+  width: 75%;
+  transition: left var(--anim-duration) var(--anim-mode);
+}
+.nav-phone-menu-close {
+  position: fixed;
+  right: 1.5em;
+  top: 1.5em;
+}
+.nav-container.opened {
+  left: 25%;
+}
+
+.main-nav {
+  display: flex;
+  flex-flow: column;
+  gap: 2em;
+  text-transform:uppercase;
+  padding-left: 24px;
+}
+.nav-link {
+  font-size: var(--fs-nav-menu);
+}
+.nav-link::before {
+  content: attr(data-number); 
+  position: absolute;
+  font-weight: var(--fw-bold);
+  left: 28px;
+}
+
 @media (min-width:768px) {
   body {
     padding: 0;
@@ -287,13 +333,14 @@ main.home {
   }
 
   .main-nav {
-    display: flex;
+    flex-flow: row;
     align-items: stretch;
     gap: 4em;
-    text-transform:uppercase;
   }
 
-  .nav-phone-menu {
+  .nav-phone-menu-icon,
+  .nav-phone-menu,
+  .nav-phone-menu-close {
     display: none;
   }
 
@@ -303,6 +350,9 @@ main.home {
     cursor: pointer;
     border-bottom: 2px solid transparent;
     transition: border var(--anim-duration) var(--anim-mode);
+  }
+  .nav-link::before {
+    content: none;
   }
   .nav-link:hover,
   .nav-link:focus-visible {
@@ -318,9 +368,12 @@ main.home {
   }
 
   .nav-container {
+    position: static;
+    width: auto;
     display: flex;
     align-items: stretch;
-    background-color: hsl(232, 28%, 10%);
+    background: hsl(232, 28%, 10%);
+    padding: 0;
   }
 
   .main-nav {
@@ -364,15 +417,13 @@ main.home {
     position: relative;
   }
   .nav-link::before {
-    content: attr(data-number); 
-    position: absolute;
-    font-weight: var(--fw-bold);
+    content: attr(data-number);
     left: 0;
   }
 
   .nav-container {
     background-color: transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--bg-blur));
     z-index: -1;
   }
 

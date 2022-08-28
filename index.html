@@ -17,6 +17,8 @@
     <img class="nav-logo" src="./assets/shared/logo.svg" alt="logo">
     <div class="nav-divider"></div>
     <div class="nav-container">
+      <img src="./assets/shared/icon-close.svg" alt="Close menu" title="Close menu"
+           class="nav-phone-menu-close pointer" id="phoneMenuClose">
       <nav class="main-nav">
         <a class="nav-link selected" data-number="00">Home</a>
         <a class="nav-link" data-number="01">Destination</a>
@@ -24,8 +26,8 @@
         <a class="nav-link" data-number="03">Technology</a>
       </nav>
     </div>
-    <div class="nav-phone-menu">
-      <img src="./assets/shared/icon-hamburger.svg" alt="Menu">
+    <div class="nav-phone-menu pointer" id="phoneMenu">
+      <img src="./assets/shared/icon-hamburger.svg" alt="Show menu" title="Show menu">
     </div>
   </header>
   <main class="home">
@@ -40,5 +42,7 @@
       <p class="home-button fs-600">Explore</p>
     </div>
   </main>
+
+  <script src="./js/Header.js"></script>
 </body>
 </html>
