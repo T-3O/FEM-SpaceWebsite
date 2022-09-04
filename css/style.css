@@ -2,6 +2,7 @@
   --clr-primary-400: hsl(231, 77%, 90%);
 
   --clr-neutral-100: hsl(230, 35%, 7%);
+  --clr-neutral-200: hsl(232, 28%, 10%);
   --clr-neutral-300: hsl(224, 7%, 30%);
   --clr-neutral-500: hsl(0, 0%, 59%);
   --clr-neutral-900: hsl(0 0% 100%);
@@ -34,6 +35,14 @@
   --anim-mode: ease-in-out;
 
   --bg-blur: 10px;
+
+  --gap-300: .8em;
+  --gap-400: 1em;
+  --gap-500: 1.5em;
+  --gap-600: 2em;
+  --gap-700: 2.5em;
+  --gap-800: 3em;
+  --gap-900: 4em;
 }
 
 @media (min-width: 768px) {
@@ -283,7 +292,7 @@ main.home {
   top: 0;
   bottom: 0;
   left: 100%;
-  padding: 2em;
+  padding: var(--gap-600);
   padding-top: 7em;
   backdrop-filter: blur(calc(var(--bg-blur) *2));
   width: 75%;
@@ -291,8 +300,8 @@ main.home {
 }
 .nav-phone-menu-close {
   position: fixed;
-  right: 1.5em;
-  top: 1.5em;
+  right: var(--gap-500);
+  top: var(--gap-500);
 }
 .nav-container.opened {
   left: 25%;
@@ -301,7 +310,7 @@ main.home {
 .main-nav {
   display: flex;
   flex-flow: column;
-  gap: 2em;
+  gap: var(--gap-600);
   text-transform:uppercase;
   padding-left: 24px;
 }
@@ -312,7 +321,7 @@ main.home {
   content: attr(data-number); 
   position: absolute;
   font-weight: var(--fw-bold);
-  left: 28px;
+  left: 34px;
 }
 
 @media (min-width:768px) {
@@ -335,7 +344,7 @@ main.home {
   .main-nav {
     flex-flow: row;
     align-items: stretch;
-    gap: 4em;
+    gap: var(--gap-900);
   }
 
   .nav-phone-menu-icon,
@@ -364,7 +373,7 @@ main.home {
 
   .nav-logo {
     align-self: center;
-    padding-inline: 2.5em;
+    padding-inline: var(--gap-700);
   }
 
   .nav-container {
@@ -372,12 +381,12 @@ main.home {
     width: auto;
     display: flex;
     align-items: stretch;
-    background: hsl(232, 28%, 10%);
+    background: var(--clr-neutral-200);
     padding: 0;
   }
 
   .main-nav {
-    padding-inline: 5em;
+    padding-inline: clamp(2em, 5vw, 6em);
   }
 
   main.home {
@@ -385,7 +394,13 @@ main.home {
   }
 
   .home-button {
+    --clr-neutral-500: hsla(0, 0%, 59%, .5);
     width: 242px;
+    transition: box-shadow var(--anim-duration) var(--anim-mode);
+  }
+  .home-button:hover {
+    box-shadow: 0 0 20px 50px var(--clr-neutral-500);
+    cursor: pointer;
   }
 }
 
@@ -398,7 +413,7 @@ main.home {
   }
 
   header {
-    padding-top: 2em;
+    padding-top: var(--gap-600);
     grid-template-columns: max-content auto max-content;
     justify-content: normal;
     min-height: 16vh;
@@ -409,7 +424,7 @@ main.home {
     align-self: center;
     height: 1px;
     background-color: var(--clr-neutral-300);
-    margin-right: -90px;
+    margin-right: -75px;
   }
 
   .nav-link {
@@ -418,7 +433,8 @@ main.home {
   }
   .nav-link::before {
     content: attr(data-number);
-    left: 0;
+    left: -5px;
+    z-index: 2;
   }
 
   .nav-container {
@@ -428,7 +444,7 @@ main.home {
   }
 
   .main-nav {
-    padding-inline: 18em;
+    padding-inline: clamp(4em, 7vw ,18em);
   }
 
   main.home {
@@ -438,7 +454,7 @@ main.home {
     grid-template-rows: auto;
     height: auto;
     width: auto;
-    max-width: 1180px;
+    max-width: min(80%, 1180px);
     margin-block: 10rem;
   }
 
