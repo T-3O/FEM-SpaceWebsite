@@ -379,6 +379,8 @@ main.destination img {
   width: 100%;
   display: flex;
   flex-flow: column;
+  align-items: center;
+  text-align: center;
   row-gap: var(--gap-400);
   border-top: 1px solid var(--clr-primary-800);
   margin-top: var(--gap-300);
