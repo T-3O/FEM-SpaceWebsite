@@ -275,10 +275,11 @@ body.destination {
 main, .page-container {
   justify-self: center;
   display: grid;
-  height: 100%;
   align-items: center;
 }
-
+main {
+  height: 100%;
+}
 main.home {
   grid-template-rows: 1fr 1fr;  
 }
@@ -570,6 +571,8 @@ main.destination img {
   /* Destination page */
   main.destination {
     grid-template: auto 1fr / 1fr 1fr;
+    padding-inline: 8rem;
+    column-gap: var(--gap-800);
   }
   main.destination img {
     max-width: 100%;
@@ -579,6 +582,7 @@ main.destination img {
   }
   .page-container {
     justify-items: start;
+    row-gap: var(--gap-800);
   }
   .page-text {
     text-align: left;
