@@ -394,6 +394,39 @@ main.destination img {
   text-transform: uppercase;
 }
 
+.fragment {
+  display: block;
+}
+.fragment[hiding] {
+  animation: fade-out var(--anim-duration) var(--anim-mode);
+  opacity: 0;
+}
+.fragment.hidden {
+  display: none;
+}
+.fragment.visible {
+  opacity: 1;
+  animation: fade-in var(--anim-duration) var(--anim-mode);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (min-width:768px) {
   body {
     padding: 0;
