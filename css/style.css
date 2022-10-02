@@ -716,8 +716,10 @@ main.crew picture {
     align-self: center;
     width: 500px;
     margin-inline: 0;
-    align-content: space-evenly;
-    height: 100%;
+    gap: var(--gap-500);
+  }
+  main.crew .page-nav {
+    margin-top: var(--gap-800);
   }
   .crew-title {
     text-align: left;
