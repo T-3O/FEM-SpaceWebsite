@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>FrontEnd Mentor - Space Website</title>
+</head>
+<body class="technology">
+  <header>
+    <img class="nav-logo" src="./assets/shared/logo.svg" alt="logo">
+    <div class="nav-divider"></div>
+    <div class="nav-container">
+      <img src="./assets/shared/icon-close.svg" alt="Close menu" title="Close menu"
+           class="nav-phone-menu-close pointer" id="phoneMenuClose">
+      <nav class="main-nav">
+        <a class="nav-link" href="./index.html" data-number="00">Home</a>
+        <a class="nav-link" href="./destination.html" data-number="01">Destination</a>
+        <a class="nav-link" href="./crew.html" data-number="02">Crew</a>
+        <a class="nav-link selected" href="./technology.html" data-number="03">Technology</a>
+      </nav>
+    </div>
+    <div class="nav-phone-menu pointer" id="phoneMenu">
+      <img src="./assets/shared/icon-hamburger.svg" alt="Show menu" title="Show menu">
+    </div>
+  </header>
+
+  <main class="page technology">
+    <div class="fs-heading-5 text-neutral-900 | page-subtitle">
+      <span class="text-neutral-500">03</span>Space launch 101
+    </div>
+    <picture class="fragment visible" data-display-obj="vehicle">
+      <img class="hide-desktop" src="./assets/technology/image-launch-vehicle-landscape.jpg" alt="A spaceship take off">
+      <img class="view-desktop" src="./assets/technology/image-launch-vehicle-portrait.jpg" alt="A spaceship take off">
+    </picture>
+    <picture class="fragment hidden" data-display-obj="spaceport">
+      <img class="hide-desktop" src="./assets/technology/image-spaceport-landscape.jpg" alt="A picture of a spaceport">
+      <img class="view-desktop" src="./assets/technology/image-spaceport-portrait.jpg" alt="A picture of a spaceport">
+    </picture>
+    <picture class="fragment hidden" data-display-obj="capsule">
+      <img class="hide-desktop" src="./assets/technology/image-space-capsule-landscape.jpg" alt="A picture of a space capsule">
+      <img class="view-desktop" src="./assets/technology/image-space-capsule-portrait.jpg" alt="A picture of a space capsule">
+    </picture>
+    <div class="page-container">
+      <nav class="page-nav">
+        <a href="#" class="fragment-loader | nav-link number selected" data-target="vehicle">1</a>
+        <a href="#" class="fragment-loader | nav-link number" data-target="spaceport">2</a>
+        <a href="#" class="fragment-loader | nav-link number" data-target="capsule">3</a>
+      </nav>
+      <div class="card-title technology-title">
+        <div class="fs-heading-2">The terminology...</div>
+        <div class="fs-heading-1 | fragment visible" data-display-obj="vehicle">Launch Vehicle</div>
+        <div class="fs-heading-1 | fragment hidden" data-display-obj="spaceport">spaceport</div>
+        <div class="fs-heading-1 | fragment hidden" data-display-obj="capsule">Space capsule</div>
+      </div>
+      <p class="fs-400 | page-text | fragment visible" data-display-obj="vehicle">
+        A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch.
+      </p>
+      <p class="fs-400 | page-text | fragment hidden" data-display-obj="spaceport">
+        A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.
+      </p>
+      <p class="fs-400 | page-text | fragment hidden" data-display-obj="capsule">
+        A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.
+      </p>
+    </div>
+  </main>
+
+  <script src="./js/Header.js" async></script>
+  <script src="./js/Page.js" defer></script>
+</body>
+</html>
